@@ -25,30 +25,44 @@
 }
 
 ::selection {
-	background-color: #8791ff;
+	background-color: #0068d8;
+	color: white;
 }
 
 body {
 	overflow-x: hidden;
-	background-image: url('images/noisy_grid.png');
+	background-image: url('images/noisy_grid_light.png');
 	background-repeat: repeat;
+	transition: 0.5s;
+}
+
+.dark-mode {
+	overflow-x: hidden;
+	-webkit-filter: invert();
+	background-image: url('images/noisy_grid_dark.png');
+	transition: 0.5s;
 }
 
 video {
 	margin: auto;
+	background-color: white;
+	opacity: 90%;
+	position: relative;
+	top: -64px;
 }
 
 .glyph{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	-webkit-justify-content: center;
+	-webkit-align-items: center;
 	font-family: 'amateur-blueprint-regular';
 	font-size: 48px;
 	text-align: center;
-	color: #8791ff;
+	color: #0068d8;
 	border-style: solid;
 	border-width: 1px;
-	border-color: #8791ff;
+	border-color: #0068d8;
 	padding: 40px;
 	height: 24px;
 	width: 24px;
@@ -57,15 +71,19 @@ video {
 }
 
 .glyph:hover {
-	background-color: #8791ff;
-	color: white;
+	background-color: #0068d8;
+	color: black;
 }
 
 .navbar {
+	display: flex;
+	flex-direction: row-reverse;
+	-webkit-justify-content: right;
+	-webkit-align-items: center;
 	height: 64px;
-	background-color: #121112;
-	color: white;
-	position: fixed;
+	background-color: #edeeed;
+	color: black;
+	position: sticky;
 	top: 0px;
 	left: 0px;
 	width: 100vw;
@@ -77,22 +95,21 @@ video {
 
 .navbar a {
 	font-family: 'Roboto';
-	color: white;
+	color: black;
 	font-size: 18px;
+	text-align: right;
+	margin: 80px;
 	text-decoration: none;
-	position: fixed;
-	top: 20px;
-	right: 40px;
 }
 
 .navbar a:hover {
-	color: lightblue;
+	color: #0068d8;
 }
 
 h1 {
 	font-family: 'amateur-blueprint-regular';
 	text-align: center;
-	color: darkgray;
+	color: #111113;
 	margin: auto;
 	padding: 40px;
 	font-size: 48px;
@@ -106,7 +123,7 @@ h2 {
 	letter-spacing: 2px;
 	color: darkgray;
 	width: 50vw;
-	padding: 40px;
+	padding-bottom: 40px;
 	margin: auto;
 }
 
@@ -114,11 +131,11 @@ p {
 	font-family: 'Roboto';
 	font-size: 16px;
 	letter-spacing: 2px;
-	color: white;
+	color: black;
 	width: 50vw;
 	border-style: solid;
 	border-with: 1px;
-	border-color: #8791ff;
+	border-color: #0068d8;
 	padding: 40px;
 	margin: auto;
 }
@@ -127,15 +144,15 @@ textarea {
 	font-family: 'amateur-blueprint-regular';
 	font-size: 36px;
 	margin: auto;
-	color: white;
-	background-color: #121112;
+	color: black;
+	background-color: #edeeed;
 	width: 50%;
 	border-style: solid;
 	border-radius: 1px;
 	border-color: darkgray;
 	padding: 80px;
 	border-radius: 5px;
-	margin-bottom: 40px;
+	margin-bottom: 80px;
 }
 
 .banner {
@@ -146,7 +163,7 @@ textarea {
 	flex-wrap: wrap;
 	width: auto;
 	height: auto;
-	color: white;
+	color: black;
 	padding: 0px 80px 0px 80px;
 }
 
@@ -157,23 +174,24 @@ textarea {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 6vh;
-	width: 6vh;
+	height: 50px;
+	width: 50px;
 	border-style: solid;
 	border-width: 2px;
-	border-color: white;
-	color: white;
-	position: fixed;
-	right: 50px;
-	bottom: 50px;
+	border-color: #111113;
+	background-color: #edeeed;
+	color: #111113;
+	position: relative;
+	bottom: -80px;
+	right: -240px;
 	border-radius: 5px;
 	transition: 0.3s;
 	z-index: 3;
 }
 
 .button:hover {
-	background-color: white;
-	color: black;
+	background-color: #111113;
+	color: white;
 }
 
 .cursor {
@@ -229,8 +247,8 @@ textarea {
 	.cursor {
 		visibility: hidden;
 	}
-	.banner {
-
+	video {
+		top: 0px;
 	}
 	.glyph {
 		font-size: 24px;
@@ -275,3 +293,5 @@ textarea {
 }
  
 .icon-download:before { content: '\e800'; } /* '' */
+.icon-sun:before { content: '\f185'; } /* '' */
+.icon-moon:before { content: '\f186'; } /* '' */
