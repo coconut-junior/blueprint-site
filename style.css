@@ -260,6 +260,12 @@ textarea {
 	}
 }
 
+@media (pointer: coarse) {
+	.cursor {
+		visibility: hidden;
+	}
+}
+
  [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
